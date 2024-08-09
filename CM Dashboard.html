@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Incluye las librerías de Bootstrap y Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Enlaza el archivo CSS -->
+    <link rel="stylesheet" href="CM Dashboard.css">
+</head>
+<body>
+    <!-- Barra lateral del menú -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="/Usuario">
+                    <i class="fas fa-user"></i>
+                    <span>Disla@CM.com</span>
+                </a>
+            </li>
+            <li>
+                <a href="/inicio">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/despachos">
+                    <i class="fas fa-truck"></i>
+                        <span>Despachos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/envios">
+                    <i class="fas fa-envelope"></i>
+                    <span>Envíos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/oficinas">
+                    <i class="fas fa-building"></i>
+                    <span>Oficinas</span>
+                </a>
+            </li>
+            <li>
+                <a href="/transportes">
+                    <i class="fas fa-car"></i>
+                    <span>Transportes</span>
+                </a>
+            </li>
+            <li>
+                <a href="/empleados">
+                    <i class="fas fa-users"></i>
+                    <span>Empleados</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cerrar-sesion">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </li>
+            <li>
+                <img src="https://images.visitarepublicadominicana.org/bandera-de-republica-dominicana.jpg" alt="" class="circular-img">
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal a la derecha del sidebar -->
+    <div class="main-content">
+        <!-- Panel de información -->
+        <div class="panel">
+            <div class="panel-item">
+                <div class="panel-item-label">Crédito general</div>
+                <div class="panel-item-value">$8349.71</div>
+                <div class="panel-item-icon"><i class="fas fa-credit-card"></i></div>
+                <a href="/credito" class="panel-item-link"></a>
+            </div>
+            <div class="panel-item">
+                <div class="panel-item-label">Despachos</div>
+                <div class="panel-item-value">0</div>
+                <div class="panel-item-icon"><i class="fas fa-truck"></i></div>
+                <a href="/despachos" class="panel-item-link"></a>
+            </div>
+            <div class="panel-item">
+                <div class="panel-item-label">Peso de los despachos</div>
+                <div class="panel-item-value">0</div>
+                <div class="panel-item-icon"><i class="fas fa-weight"></i></div>
+                <a href="/peso" class="panel-item-link"></a>
+            </div>
+            <div class="panel-item">
+                <div class="panel-item-label">Envíos</div>
+                <div class="panel-item-value">0</div>
+                <div class="panel-item-icon"><i class="fas fa-envelope"></i></div>
+                <a href="/envios" class="panel-item-link"></a>
+            </div>
+        </div>
+
+        <!-- Mapa del mundo -->
+        <div class="map">
+            <!-- Aquí iría el contenido del mapa -->
+        </div>
+    </div>
+
+    <!-- Incluye las librerías de Bootstrap y Font Awesome -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Enlaza el archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

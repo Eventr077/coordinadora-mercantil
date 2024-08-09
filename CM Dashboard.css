@@ -1,0 +1,169 @@
+/* Estilos para el contenedor principal */
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra lateral del menú */
+.sidebar {
+    width: 250px;
+    background-color: #1c1e24;
+    padding: 20px;
+    color: white;
+    height: 200vh;
+    background-image: url('path/to/your/background/image.jpg'); /* Fondo con imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 0px;    
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+    
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #d1d1d1;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    height: 75px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #03a9f4; /* Color del botón al pasar el cursor */
+    color: white;
+}
+
+.sidebar i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.sidebar .sidebar-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar .sidebar-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .sidebar-profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+
+.circular-img {
+    width: 100px;         /* Ajusta el tamaño de la imagen */
+    height: 100px;        /* Asegúrate de que el alto y el ancho sean iguales para hacerla circular */
+    border-radius: 50%;  /* Esto hace que la imagen sea circular */
+    object-fit: cover;   /* Asegura que la imagen se ajuste correctamente dentro del contenedor circular */
+    position: relative;
+    display: flex;
+    align-items: center;
+    transform: translate(40%, 10%);
+}
+
+
+.sidebar .sidebar-profile .profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Secciones del menú con submenús */
+.sidebar .menu-section {
+    margin-bottom: 10px;
+}
+
+.sidebar .menu-section-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #bbbbbb;
+}
+
+/* Estilos para el contenedor principal a la derecha del sidebar */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+/* Estilos para el panel de información */
+.panel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los items del panel se ajusten al espacio disponible */
+}
+
+.panel-item {
+    width: 23%; /* Cada panel ocupa el 23% del ancho para caber 4 en una fila */
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.panel-item-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.panel-item-value {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.panel-item-icon {
+    font-size: 24px;
+    color: #337ab7;
+    display: flex;           /* Utiliza flexbox para el contenedor */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    font-size: 24px;
+    color: #337ab7;
+    height: 50px; 
+}
+
+.panel-item-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #337ab7;
+}
+
+/* Estilos para el mapa del mundo */
+.map {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
