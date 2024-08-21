@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Envíos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="Envios.css">
+</head>
+<body>
+    <!-- Barra lateral del menú -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="/Usuario">
+                    <i class="fas fa-user"></i>
+                    <span>Disla@CM.com</span>
+                </a>
+            </li>
+            <li>
+                <a href="C:\Users\event\OneDrive\Documents\Coordinadora mercantil\Dashboard.html">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="/despachos">
+                    <i class="fas fa-truck"></i>
+                    <span>Despachos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/envios">
+                    <i class="fas fa-envelope"></i>
+                    <span>Envíos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/oficinas">
+                    <i class="fas fa-building"></i>
+                    <span>Oficinas</span>
+                </a>
+            </li>
+            <li>
+                <a href="/transportes">
+                    <i class="fas fa-car"></i>
+                    <span>Transportes</span>
+                </a>
+            </li>
+            <li>
+                <a href="/empleados">
+                    <i class="fas fa-users"></i>
+                    <span>Empleados</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cerrar-sesion">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar sesión</span>
+                </a>
+            </li>
+            <li>
+                <img src="https://images.visitarepublicadominicana.org/bandera-de-republica-dominicana.jpg" alt="" class="circular-img">
+            </li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        
+        <form action="" class="Formulario_Envios" onsubmit="event.preventDefault(); addToGrid();">
+            <h2>Envíos</h2>
+            
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="number" id="id" placeholder="ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="codigo">Código</label>
+                    <input type="text" id="codigo" placeholder="Código">
+                </div>
+
+                <div class="form-group">
+                    <label for="peso">Peso</label>
+                    <input type="number" id="peso" placeholder="Peso">
+                </div>
+
+                <div class="form-group">
+                    <label for="remitente">Remitente</label>
+                    <input type="text" id="remitente" placeholder="Remitente">
+                </div>
+
+                <div class="form-group">
+                    <label for="paisRemitente">País remitente</label>
+                    <select id="paisRemitente">
+                        <option value="">Selecciona un país</option>
+                        <option value="AF">AF - Afganistán</option>
+                        <!-- Lista de países continúa -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="destinatario">Destinatario</label>
+                    <input type="text" id="destinatario" placeholder="Destinatario">
+                </div>
+
+                <div class="form-group">
+                    <label for="paisDestinatario">País destinatario</label>
+                    <select id="paisDestinatario">
+                        <option value="">Selecciona un país</option>
+                        <option value="AF">AF - Afganistán</option>
+                        <!-- Lista de países continúa -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button">Cancelar</button>
+                <button type="submit" id="actionButton">Registrar</button>
+            </div>
+        </form>
+
+        <!-- Coloca la tabla justo debajo del formulario -->
+        <h3>Lista de Envíos</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Peso</th>
+                    <th>Remitente</th>
+                    <th>País Remitente</th>
+                    <th>Destinatario</th>
+                    <th>País Destinatario</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Aquí se añadirán las filas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function updateFormState() {
+            const registrar = document.getElementById('registrar');
+            const buscar = document.getElementById('buscar');
+            const actualizar = document.getElementById('actualizar');
+            
+            const idInput = document.getElementById('id');
+            const codigoInput = document.getElementById('codigo');
+            const pesoInput = document.getElementById('peso');
+            const remitenteInput = document.getElementById('remitente');
+            const paisRemitenteInput = document.getElementById('paisRemitente');
+            const destinatarioInput = document.getElementById('destinatario');
+            const paisDestinatarioInput = document.getElementById('paisDestinatario');
+            const fechaInput = document.getElementById('fecha');
+            const actionButton = document.getElementById('actionButton');
+        }
+
+        function addToGrid() {
+            const idInput = document.getElementById('id');
+            const codigoInput = document.getElementById('codigo');
+            const pesoInput = document.getElementById('peso');
+            const remitenteInput = document.getElementById('remitente');
+            const paisRemitenteInput = document.getElementById('paisRemitente');
+            const destinatarioInput = document.getElementById('destinatario');
+            const paisDestinatarioInput = document.getElementById('paisDestinatario');
+            const fechaInput = document.getElementById('fecha');
+
+            const tableBody = document.getElementById('tableBody');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>${idInput.value}</td>
+                <td>${codigoInput.value}</td>
+                <td>${pesoInput.value}</td>
+                <td>${remitenteInput.value}</td>
+                <td>${paisRemitenteInput.value}</td>
+                <td>${destinatarioInput.value}</td>
+                <td>${paisDestinatarioInput.value}</td>
+                <td>${fechaInput.value}</td>
+            `;
+
+            tableBody.appendChild(newRow);
+
+            idInput.value = '';
+            codigoInput.value = '';
+            pesoInput.value = '';
+            remitenteInput.value = '';
+            paisRemitenteInput.value = '';
+            destinatarioInput.value = '';
+            paisDestinatarioInput.value = '';
+            fechaInput.value = '';
+        }
+    </script>
+</body>
+</html>
